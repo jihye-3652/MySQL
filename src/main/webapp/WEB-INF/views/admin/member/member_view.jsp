@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="../include/header.jsp" %>
 
-<!-- Content Wrapper. Contains page content -->
+		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
 			<div class="content-header">
@@ -37,14 +37,19 @@
 									<div class="col-sm-12">
 										<!-- text input -->
 										<div class="form-group">
-											<label>user_id</label> <br> ${memberVO.user_id}
+											<label>user_id</label> <br> ${memberVO.user_id} 
+											
+											<!-- <input type="text" class="form-control"
+												placeholder="user02" disabled=""> -->
 										</div>
 									</div>
-
+										
 									<div class="col-sm-12">
 										<!-- text input -->
 										<div class="form-group">
 											<label>user_name</label> <br> ${memberVO.user_name}
+											<!-- <input type="text" class="form-control"
+												placeholder="user02" disabled=""> -->
 										</div>
 									</div>
 
@@ -52,6 +57,8 @@
 										<!-- text input -->
 										<div class="form-group">
 											<label>email</label> <br> ${memberVO.email}
+											<!-- <input type="text" class="form-control"
+												placeholder="user02@edu.com" disabled=""> -->
 										</div>
 									</div>
 
@@ -59,17 +66,23 @@
 										<!-- text input -->
 										<div class="form-group">
 											<label>point</label> <br> ${memberVO.point}
+											<!-- <input type="text" class="form-control"
+												placeholder="0"> -->
 										</div>
 									</div>
 										<div class="col-sm-12">
 										<div class="form-group">
 											<label>enabled</label> <br> ${memberVO.enabled}
+											<!-- <input type="text" class="form-control"
+												placeholder="true" disabled=""> -->
 										</div>
 									</div>
 										<div class="col-sm-12">
 										<!-- text input -->
 										<div class="form-group">
 											<label>level</label> <br> ${memberVO.levels}
+											<!-- <input type="text" class="form-control"
+												placeholder="ROLE_ADMIN" disabled=""> -->
 										</div>
 									</div>
 									<div class="form-group">
@@ -80,7 +93,7 @@
 									<a href="/admin/member/list?page=${pageVO.page}" class="btn btn-primary">LIST ALL</a>
 								</div>
 								</div>
-							<input type="hidden" name="user_id" value="${memberVO.user_id}" >	
+								<input type="hidden" name="user_id" value="${memberVO.user_id}">
 							</form>
 						</div>
 						<!-- /.content-header -->
@@ -89,10 +102,19 @@
 						<div class="content"></div>
 						<!-- .content  -->
 					</div>
-					
+					<!-- <!-- Control Sidebar
+					<aside class="control-sidebar control-sidebar-dark">
+						Control sidebar content goes here
+						<div class="p-3">
+							<h5>Title</h5>
+							<p>Sidebar content</p>
+							<button type="button" class="btn btn-primary btn-lg btn-block">로그아웃</button>
+						</div>
+					</aside>
+					/.control-sidebar -->
 				</div>
 			</div>
 		</div>
-		<!-- ./Contents Wrap -->
+		
 
-<%@ include file="../include/footer.jsp" %> 
+<%@include file="../include/footer.jsp" %>

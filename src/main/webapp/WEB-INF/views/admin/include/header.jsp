@@ -17,15 +17,13 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 <script>
 if('${msg}' != ""){
-	alert("${msg} 에 성공하였습니다.!");
-}
+	alert("${msg}에 성공하였습니다!");}
 </script>
-<!-- jQuery코어 -->
+<!-- jQuery -->
 <script src="/resources/plugins/jquery/jquery.min.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -66,8 +64,7 @@ if('${msg}' != ""){
            style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
-
-    <!-- Sidebar -->
+   <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -99,7 +96,7 @@ if('${msg}' != ""){
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/member/list" class="nav-link">
+                <a href="/admin/member/list" class="nav-link"> <!-- active=초기값 -->
                   <i class="far fa-circle nav-icon"></i>
                   <p>회원관리</p>
                 </a>

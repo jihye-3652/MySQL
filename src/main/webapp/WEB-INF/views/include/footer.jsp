@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+  
 	<footer>
 		<div class="foot_area box_inner">
 			<ul class="foot_list clear">
-				<li><a href="/resources/home/javascript:;">이용약관</a></li>
-				<li><a href="/resources/home/javascript:;">개인정보취급방침</a></li>
+				<li><a href="javascript:;">이용약관</a></li>
+				<li><a href="javascript:;">개인정보취급방침</a></li>
 			</ul>
 			<h2>스프링</h2>
             <p class="addr">OOOO OOOOO OOOO OOOOOOOOO OOOOO <span class="gubun">/</span>        
@@ -15,9 +15,9 @@
 			</p>
 			<p class="copy box_inner">Copyright(c) OOOO OOOOO all right reserved</p>
 			<ul class="snslink clear">
-				<li><a href="/resources/home/javascript:;">blog</a></li>
-				<li><a href="/resources/home/javascript:;">facebook</a></li>
-				<li><a href="/resources/home/javascript:;">instargram</a></li>
+				<li><a href="https://github.com/jihye-3652/jihye">github</a></li>
+				<li><a href="https://www.facebook.com/people/Jihye-Kim/100004744873565">facebook</a></li>
+				<li><a href="https://www.instagram.com/ji__hyee___/">instargram</a></li>
 			</ul>
 		</div>
 	</footer>
@@ -28,9 +28,9 @@
 <h2 class="hdd">빠른 링크 : 전화 문의,카카오톡,오시는 길,꼭대기로</h2>
 <div class="quick_area">
 	<ul class="quick_list">
-		<li><a href="/resources/home/tel:010-1234-5678"><h3>전화 문의</h3><p>010-1234-5678</p></a></li>
-		<li><a href="/resources/home/javascript:;"><h3>카카오톡 <em>상담</em></h3><p>1:1상담</p></a></li>
-		<li><a href="/resources/home/javascript:;"><h3 class="to_contact">오시는 길</h3></a></li>
+		<li><a href="tel:010-1234-5678"><h3>전화 문의</h3><p>010-1234-5678</p></a></li>
+		<li><a href="javascript:;"><h3>카카오톡 <em>상담</em></h3><p>1:1상담</p></a></li>
+		<li><a href="javascript:;"><h3 class="to_contact">오시는 길</h3></a></li>
 	</ul>
 	<p class="to_top"><a href="#layout0" class="s_point">TOP</a></p>
 </div>

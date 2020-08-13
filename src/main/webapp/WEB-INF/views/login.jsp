@@ -3,9 +3,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <%@ include file="include/header.jsp" %>
 <script>
-if('${param.msg}' == "fail"){
-	alert('로그인에 실패했습니다.! 상세메세지 ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}');
-}
+if('${param.msg}' == "faild"){
+	alert('로그인에 실패하였습니다! 상세메세지 ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}');
+	}
 </script>
 	<!-- container start -->
 	<div id="container">
@@ -42,7 +42,6 @@ if('${param.msg}' == "fail"){
 				</fieldset>
 			</form>
 			<!-- //appForm -->
-			
 		</div>
 		<!-- //bodytext_area -->
 

@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ include file="include/header.jsp" %>
-	<!-- Content Wrapper. Contains page content -->
+<!-- Content Wrapper. Contains page content -->
 	<div id="container">
 	
     	<div class="main_rolling_pc">
@@ -12,22 +12,22 @@
                     <li class="imglist0">
                         <div class="roll_content">
                             <a href="/resources/home/javascript:;">
-                            <img src="/resources/home/img/img_slidecontents01.png" alt="OOOO OOOOO OOOO OOOOO, 스프링... OOOO OOOOO?"></a>
-                            <p class="roll_txtline">OOOO OOOOOOOOO OOOOOOOOO OOOOO</p>
+                            <img src="/resources/home/img/banner_1.png" style="max-width:100%; height:auto;" alt="OOOO OOOOO OOOO OOOOO, 스프링... OOOO OOOOO?"></a>
+                            <p class="roll_txtline">JICA'S LOGO 1</p>
                         </div>
                     </li>
                     <li class="imglist1">
                         <div class="roll_content">
                             <a href="/resources/home/javascript:;">
-                            <img src="/resources/home/img/img_slidecontents02.png" alt="OOOO OOOOOOOOO OOOOO 스프링정보, 스프링... OOOO OOOOO?"></a>
-                            <p class="roll_txtline">OOOO OOOOOOOOO OOOOOOOOO OOOOO</p>
+                            <img src="/resources/home/img/banner_2.png" style="max-width:100%; height:auto;" alt="OOOO OOOOOOOOO OOOOO 스프링정보, 스프링... OOOO OOOOO?"></a>
+                            <p class="roll_txtline">JICA'S LOGO 2</p>
                         </div>
                     </li>
                     <li class="imglist2">
                         <div class="roll_content">
                             <a href="/resources/home/javascript:;">
-                            <img src="/resources/home/img/img_slidecontents03.png" alt="OOOO OOOOO 믿을 수 있는 스프링정보, 스프링... OOOO OOOOO?"></a>
-                            <p class="roll_txtline">OOOO OOOOOOOOO OOOOOOOOO OOOOO</p>
+                            <img src="/resources/home/img/banner_3.png" style="max-width:100%; height:auto;" alt="OOOO OOOOO 믿을 수 있는 스프링정보, 스프링... OOOO OOOOO?"></a>
+                            <p class="roll_txtline">JICA'S LOGO 3</p>
                         </div>
                     </li>
                 </ul>
@@ -49,13 +49,13 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <a href="/resources/home/javascript:;"><img src="/resources/home/img/mainslide_mob01.jpg" alt="OOOO OOOOO 믿을 수 있는 스프링정보, 스프링... OOOO OOOOO?" /></a>
+                        <a href="/resources/home/javascript:;"><img src="/resources/home/img/marble1.jpg" alt="OOOO OOOOO 믿을 수 있는 스프링정보, 스프링... OOOO OOOOO?" /></a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="/resources/home/javascript:;"><img src="/resources/home/img/mainslide_mob02.jpg" alt="OOOO OOOOO 믿을 수 있는 스프링정보, 스프링... OOOO OOOOO?" /></a>
+                        <a href="/resources/home/javascript:;"><img src="/resources/home/img/marble1.jpg" alt="OOOO OOOOO 믿을 수 있는 스프링정보, 스프링... OOOO OOOOO?" /></a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="/resources/home/javascript:;"><img src="/resources/home/img/mainslide_mob03.jpg" alt="OOOO OOOOO 믿을 수 있는 스프링정보, 스프링... OOOO OOOOO?" /></a>
+                        <a href="/resources/home/javascript:;"><img src="/resources/home/img/marble1.jpg" alt="OOOO OOOOO 믿을 수 있는 스프링정보, 스프링... OOOO OOOOO?" /></a>
                     </div>
                 </div>						
                 <div class="swiper-pagination"></div>
@@ -67,12 +67,59 @@
 	
 		<!-- about_area -->
 		<div class="about_area">
-			<h2>OOOO OOOOO 스프링 <b>TOP 3</b></h2>
+			<h2>ABOUT JICA <b>TOP3 ARTICLES</b></h2>
 			<div class="about_box">
 				<ul class="place_list box_inner clear">
-					<c:forEach items="${boardList}" var="boardVO" varStatus="status">
+				<c:forEach items="${boardList}" var="boardVO" varStatus="status">
 						<c:if test="${status.count <= 3}">
-						<li><a href="/board/view?bno=${boardVO.bno}&page=1">
+						<li><a href="/board/view?bno=${boardVO.bno}">
+								<!-- 첨부파일이 있을때 if -->
+								<c:if test="${boardVO.files[0] != null }">
+									<c:set var="extName" value="${fn:split(boardVO.files[0],'.')}" />
+									<c:set var="ext" value="${extName[fn:length(extName)-1]}" />
+									<!-- 첨부파일이 있는데 이미지일때와 이미지가 아닐때 choose -->
+									<c:choose>
+										<c:when test="${fn:containsIgnoreCase(extNameArray, ext)}">
+											<img src="/download?filename=${boardVO.files[0]}" title="첨부파일 이미지" style="width:100%;">
+										</c:when>
+										<c:otherwise>
+											<img class="img_topplace" src="/resources/home/img/marble_pink.jpg" alt="이미지 없음" />
+										</c:otherwise>
+									</c:choose>
+								</c:if>
+								<!-- 첨부파일이 없을때 if -->
+								<c:if test="${boardVO.files[0] == null }">
+									<img class="img_topplace" src="/resources/home/img/marble_pink.jpg" alt="이미지 없음" />
+								</c:if>
+								<h3>${boardVO.title}</h3>
+								<p class="txt">${boardVO.content}</p>
+								<span class="view">VIEW</span></a>
+							</a>
+						</li>
+						</c:if>
+				</c:forEach>
+					<!-- <li><a href="#" onclick="$('.popup_base').css('height',$(document).height());$('.space_pop').show();">
+							<img class="img_topplace" src="/resources/home/img/coffee_education.png" alt="OOOO OOOOO" />
+							<h3>COFFEE EDUCATION</h3>
+							<p class="txt">Industry Education and Insight for Coffee Professionals.</p>
+							<span class="view">VIEW</span></a>
+					</li> -->
+					<!-- <li><a href="#" onclick="$('.popup_base').css('height',$(document).height());$('.program_pop').show();">
+							<img class="img_topplace" src="/resources/home/img/whats_coffee.png" alt="OOOO OOOOO" />
+							<h3>What is Coffee?</h3>
+							<p class="txt">Everyone recognizes a roasted coffee bean, but you might not recognize an actual coffee plant.</p>
+							<span class="view">VIEW</span></a>
+					</li>
+					<li><a href="#" onclick="$('.popup_base').css('height',$(document).height());$('.space_pop').show();">
+							<img class="img_topplace" src="/resources/home/img/coffee_education.png" alt="OOOO OOOOO" />
+							<h3>COFFEE EDUCATION</h3>
+							<p class="txt">Industry Education and Insight for Coffee Professionals.</p>
+							<span class="view">VIEW</span></a>
+					</li> -->
+					
+					<%-- <c:forEach items="${boardList}" var="boardVO" varStatus="status">
+						<c:if test="${status.count <= 3}">
+						<li><a href="/board/view?bno=${boardVO.bno}">
 								<!-- 첨부파일이 있을때 if -->
 								<c:if test="${boardVO.files[0] != null }">
 									<c:set var="extName" value="${fn:split(boardVO.files[0],'.')}" />
@@ -97,7 +144,20 @@
 								<span class="view">VIEW</span></a>
 						</li>
 						</c:if>
-					</c:forEach>
+					</c:forEach> --%>
+					
+					<!-- articles of nca -->
+					<!-- <li><a href="#" onclick="$('.popup_base').css('height',$(document).height());$('.space_pop').show();">
+							<img class="img_topplace" src="/resources/home/img/coffee_education.png" alt="OOOO OOOOO" />
+							<h3>COFFEE EDUCATION</h3>
+							<p class="txt">Industry Education and Insight for Coffee Professionals.</p>
+							<span class="view">VIEW</span></a>
+					</li>
+					<li><a href="#" onclick="$('.popup_base').css('height',$(document).height());$('.program_pop').show();">
+							<img class="img_topplace" src="/resources/home/img/whats_coffee.png" alt="OOOO OOOOO" />
+							<h3>What is Coffee?</h3>
+							<p class="txt">Everyone recognizes a roasted coffee bean, but you might not recognize an actual coffee plant.</p>
+							<span class="view">VIEW</span></a> -->
 				</ul>
 			</div>
 		</div>
@@ -114,8 +174,9 @@
 				<div class="bbs_line">
 					<h3><a href="/board/list">NOTICE</a></h3>
 					<ul class="notice_recent">
-					<c:forEach items="${boardList}" var="boardVO" varStatus="status">
-						<li><a href="/board/view?bno=${boardVO.bno}&page=1">${boardVO.title}</a></li>
+					 <c:forEach items="${boardList}" var="boardVO" varStatus="status">
+						<li><a href="/board/view?bno=${boardVO.bno}">${boardVO.title}</a></li>
+						
 					</c:forEach>
 					</ul>
 				</div>
@@ -123,6 +184,9 @@
 		</div>
 		<!-- //app_area -->
 		
+		
+		
 	</div>
-	<!-- //Content Wrapper -->
+	<!-- .//Content Wrapper. Contains page content -->
 <%@ include file="include/footer.jsp" %>
+	

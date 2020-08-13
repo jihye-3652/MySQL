@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -21,62 +21,69 @@
 <![endif]-->
 <script>
 if('${msg}' != ""){
-	alert("${msg} 에 성공하였습니다.!");
+	alert("${msg}에 성공하였습니다!");
 }
 </script>
 </head>
 <body>
 <ul class="skipnavi">
-    <li><a href="#container">본문내용</a></li>
+    <li><a href="/sample">포트폴리오</a></li>
 </ul>
 <!-- wrap -->
 <div id="wrap">
 
 	<header id="header">
 		<div class="header_area box_inner clear">	
-			<h1><a href="/">사용자홈페이지</a></h1>
+			<h1><a href="/">사용자 홈페이지</a></h1>
 			<p class="openMOgnb"><a href="#"><b class="hdd">메뉴열기</b> <span></span><span></span><span></span></a></p>
 			<!-- header_cont -->
 			<div class="header_cont">
 				<ul class="util clear">
 				<c:choose>
-					<c:when test="${session_enabled eq 'true' }">
-						<li><span style="color:white">${session_username}님[${session_userid}] 환영합니다.!</span>
-						</li>
-						<li><a href="/logout">로그아웃</a>
-						</li>
-						<c:if test="${session_levels eq 'ROLE_ADMIN'}">
-							<li><a href="/admin">관리자</a>
-							</li>
+					<c:when test="${session_enabled eq 'true' }"> <!-- 숫자열비교 == / 문자열비교 eq -->
+						<li><span style="color:#fff">${session_username}님 [${session_userid}] 환영합니다!</span>
+						<li><a href="/logout">LOGOUT</a></li>
+						<c:if test="${session_levels eq 'ROLE_ADMIN'}"> 
+							<li><a href="/admin">ADMINISTRATOR</a></li>
 						</c:if>
 					</c:when>
 					<c:otherwise>
-						<li><a href="/login">로그인</a>
-						</li>
-						<li><a href="#">회원가입</a>
-						</li>
+						<li><a href="/login">LOGIN</a></li>
+						<li><a href="#">SIGN UP</a></li>
 					</c:otherwise>
 				</c:choose>
+					<!-- <li><a href="/admin">관리자</a></li> -->
 				</ul>	
 				<nav>
 				<ul class="gnb clear">
-					<li><a href="/sample" class="openAll1">포트폴리오</a>
-
+					<li><a href="/sample" class="openAll1"><b>PORTFOLIO</b></a>
                         <div class="gnb_depth gnb_depth2_1">
                             <ul class="submenu_list">
-                                <li><a href="/sample">원페이지</a></li>
-                                <li><a href="/sample/slide">슬라이드</a></li>
-                            </ul>
-                        </div>
-					</li>
-					<li><a href="/board/list" class="openAll2">고객센터</a>
-				        <div class="gnb_depth gnb_depth2_2">
-                            <ul class="submenu_list">
-                                <li><a href="/board/list">공지사항</a></li>
+                                <li><a href="/sample/">ONE PAGE WEBSITE</a></li>
+                                <li><a href="/sample/slide">SLIDE</a></li>
                             </ul>
                         </div>
 					</li>
 					
+	        		<li><a href="/board/list" class="openAll2"><b>NEWS</b></a>
+				        <div class="gnb_depth gnb_depth2_2">
+                            <ul class="submenu_list">
+                            <li><a href="/board/list">JICA NEWS</a></li>
+                            <li><a href="#">NEWSLETTERS</a></li>
+                            <li><a href="#">COVID-19 UPDATES</a></li>
+                            </ul>
+                        </div>
+                     </li>
+                        
+                    <li><a href="/board/list" class="openAll3"><b>ABOUT</b></a>
+				        <div class="gnb_depth gnb_depth2_3">
+                            <ul class="submenu_list">
+                            	<li><a href="#">ABOUT JICA</a></li>
+                                <li><a href="#">WORK WITH US</a></li>
+                               	<li><a href="#">CONTACT US</a></li>
+                            </ul>
+                        </div>
+					</li>
 				</ul>
                 </nav>
 				<p class="closePop"><a href="#">닫기</a></p>
@@ -84,4 +91,5 @@ if('${msg}' != ""){
 			<!-- //header_cont -->
 		</div>
 	</header>
+	
 	
