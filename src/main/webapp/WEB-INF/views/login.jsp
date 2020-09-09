@@ -2,10 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <%@ include file="include/header.jsp" %>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.2.js" charset="utf-8"></script>
 <script>
-if('${param.msg}' == "faild"){
-	alert('로그인에 실패하였습니다! 상세메세지 ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}');
-	}
+if('${param.msg}' == "fail"){
+	alert('로그인에 실패했습니다.! 상세메세지 ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}');
+}
 </script>
 	<!-- container start -->
 	<div id="container">
@@ -42,6 +43,9 @@ if('${param.msg}' == "faild"){
 				</fieldset>
 			</form>
 			<!-- //appForm -->
+					<p class="btn_line">
+					<a href="${url}" class="btn_baseColor" style="background-color:green; width:200px;">네이버ID로 로그인</a>
+					</p>
 		</div>
 		<!-- //bodytext_area -->
 
